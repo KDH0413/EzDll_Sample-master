@@ -1,0 +1,162 @@
+﻿<UserControl x:Class="EzDll_Sample.UI.Pge_Moni_Pwr"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EzDll_Sample.UI"
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf" 
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="1024">
+    <Grid Background="AliceBlue" Height="550">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Name="grd_DevMoni" Grid.Column="0">
+            <GroupBox Grid.Column="0" Grid.Row="0" Header="POWER STATUS MONITOR" Style="{DynamicResource MaterialDesignGroupBox}" Margin="5 10" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ElectricVehicleCharger" Height="20" Width="20" VerticalAlignment="Center" />
+                            <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" Text="{Binding}" FontSize="15"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="LocalAreaNetworkConnect" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" Connection : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_Connect" Text="AIV #1" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Battery" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" Battery : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_Bat" Text="80" FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_BatPer" Text=" %" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Electricity" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" Current : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_Curr" Text="12345" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Electricity" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" Voltage : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_Volt" Text="6789" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Rotate3d" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" Temperature 1st : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_temp_1st" Text="180" FontSize="15" Foreground="Black"/>
+                        <TextBlock Text=" º" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Rotate3d" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" Temperature 2nd : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_temp_2nd" Text="180" FontSize="15" Foreground="Black"/>
+                        <TextBlock Text=" º" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Rotate3d" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" Temperature 3th : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_temp_3th" Text="180" FontSize="15" Foreground="Black"/>
+                        <TextBlock Text=" º" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="7" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="StateMachine" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" State : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_State" Text="12345" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="8" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Error" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" Error Bit : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_ErrBit" Text="12345" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <Separator Grid.Row="9" Style="{StaticResource MaterialDesignDarkSeparator}"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <Grid Name="grd_DevCmds" Grid.Column="1">
+            <GroupBox Grid.Column="1" Grid.Row="0" Header="POWER COMMANDS 4 PARAMETERS" Style="{DynamicResource MaterialDesignGroupBox}" Margin="5 10" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Database" Height="20" Width="20" VerticalAlignment="Center" />
+                            <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" Text="{Binding}" FontSize="15"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="30*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Devices" VerticalAlignment="Bottom" Margin="2 12" Foreground="{Binding BorderBrush, ElementName=cmb_Dev}"/>
+                        <TextBlock Text="Device Selection" Margin="10 0" Foreground="{Binding BorderBrush, ElementName=cmb_Dev}" VerticalAlignment="Center" FontSize="15" />
+                        <ComboBox Name="cmb_Dev" Width="150" FontSize="12"                      
+                      IsEditable="true"     
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                      Margin="0 8 0 8"
+                      Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="SerialPort" VerticalAlignment="Bottom" Margin="2 12" Foreground="{Binding BorderBrush, ElementName=cmb_Port}"/>
+                        <TextBlock Text="Port Selection" Margin="10 0" Foreground="{Binding BorderBrush, ElementName=cmb_Port}" VerticalAlignment="Center" FontSize="15" />
+                        <ComboBox Name="cmb_Port" Width="150" FontSize="12"                      
+                      IsEditable="true"     
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                      Margin="0 8 0 8"
+                      Foreground="Black"/>
+                    </StackPanel>
+
+                    <Separator Grid.Row="2" Style="{StaticResource MaterialDesignDarkSeparator}"/>
+
+                    <Button x:Name="btn_Open" Content="Open" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                    Background="#FF4B4747" Foreground="White" Grid.Row="3" Uid="1" Click="Btn_Open_Click" Width="300" HorizontalAlignment="Left"/>
+
+                    <Button x:Name="btn_Close" Content="Close" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                    Background="#FF4B4747" Foreground="White" Grid.Row="4" Uid="1" Click="Btn_Close_Click" Width="300" HorizontalAlignment="Left"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</UserControl>

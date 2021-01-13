@@ -1,0 +1,45 @@
+﻿<Window x:Class="EzDll_Sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EzDll_Sample"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Height="768" Width="1024" ResizeMode="NoResize" WindowStyle="None" Foreground="White" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="550*"/>
+            <RowDefinition Height="150*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Name="grd_Top" Background="#FF1368B6" Height="60">
+
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Easy DLL Sample Program" FontSize="22"/>
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <materialDesign:PopupBox Name="btn_Popup" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                        <StackPanel Width="150">
+                            <Button x:Name="Btn_Popup"  Content="EzVehicle" Tag="0" Click="Btn_Popup_Click"/>
+                            <Button  Content="EzPower" Tag="1" Click="Btn_Popup_Click"/>
+                            <Separator />
+                            <Button  Content="ShutDown" Tag="2" Click="Btn_Popup_Click"/>
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Height="550" >
+            <StackPanel Name="pnl_Main" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Name="grd_Btm" DockPanel.Dock="Bottom" Height="150" VerticalAlignment="Bottom" Background="#FFC7CACF" >
+            <StackPanel x:Name="pnl_Btm" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+        </Grid>
+    </Grid>
+</Window>

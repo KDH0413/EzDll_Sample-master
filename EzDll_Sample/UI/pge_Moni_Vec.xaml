@@ -1,0 +1,262 @@
+﻿<UserControl x:Class="EzDll_Sample.UI.pge_Moni_Vec"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EzDll_Sample.UI"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf" 
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="1024">
+    <Grid Background="AntiqueWhite" Height="550">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Name="grd_DevMoni" Grid.Column="0" Grid.RowSpan="2">
+            <GroupBox Grid.Column="1" Grid.Row="0" Header="VEHICLE STATUS MONITOR" Style="{DynamicResource MaterialDesignGroupBox}" Margin="5 10" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="CarSportsUtilityVehicle" Height="20" Width="20" VerticalAlignment="Center" />
+                            <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" Text="{Binding}" FontSize="15"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="20*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="LocalAreaNetworkConnect" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" Connection : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_Connect" Text="AIV #1" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="StateMachine" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" State : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_State" Text="AIV #1" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Submarine" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" SubMsg : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_SubMsg" Text="127.0.0.1" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Target" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" Destination : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_Dest" Text="127.0.0.1" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="AxisXArrow" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" POS-X : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_PosX" Text="12345" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="AxisYArrow" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" POS-Y : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_PosY" Text="6789" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Rotate3d" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" POS-Theta : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_PosAng" Text="180" FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_PosDeg" Text=" º" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="7" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="LocalActivity" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" LOCALIZATION : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_Loc" Text="80" FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_LocPer" Text=" %" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="8" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="HomeTemperature" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" Temperature : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_Temp" Text="45" FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_TempUnit" Text=" º" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="9" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Battery" Height="15" Width="15" VerticalAlignment="Center" Foreground="Black"/>
+                        <TextBlock Text=" Battery : " FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_Bat" Text="80" FontSize="15" Foreground="Black"/>
+                        <TextBlock x:Name="txt_BatPer" Text=" %" FontSize="15" Foreground="Black"/>
+                    </StackPanel>
+                    <Separator Grid.Row="10" Style="{StaticResource MaterialDesignDarkSeparator}"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <GroupBox Grid.Column="1" Grid.Row="0" Header="VEHICLE COMMANDS 4 PARAMETERS" Style="{DynamicResource MaterialDesignGroupBox}" Margin="5 10" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Database" Height="20" Width="20" VerticalAlignment="Center" />
+                            <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" Text="{Binding}" FontSize="15"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Margin="20 0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <materialDesign:PackIcon Kind="IpNetwork" Foreground="{Binding ElementName=txt_SayMsg, Path=BorderBrush}" VerticalAlignment="Center" Height="20" Width="20" />
+                        <TextBlock Text="Network IP" Margin="5 0"  FontSize="15" VerticalAlignment="Center" Foreground="{Binding ElementName=txt_SayMsg, Path=BorderBrush}"/>
+                        <TextBox x:Name ="txt_VecIP" Margin="5 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="IP Address" Width="150" HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black" />
+                    </StackPanel>
+
+                    <Button Grid.Row="1" Uid="0" Content="Open" Margin="10 10" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click_1" Width="200" HorizontalAlignment="Center" FontSize="15" />
+
+                    <Button Grid.Row="1" Grid.Column="1" Uid="1" Content="Close" Margin="10 10" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click_1" Width="200" HorizontalAlignment="Center" FontSize="15"/>
+
+                    <Separator Grid.Row="2" Grid.ColumnSpan="2" />
+
+                    <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Margin="20 0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <materialDesign:PackIcon Kind="Talking" Foreground="{Binding ElementName=txt_SayMsg, Path=BorderBrush}" VerticalAlignment="Center" Height="20" Width="20" />
+                        <TextBlock Text="Message" Margin="5 0"  FontSize="15" VerticalAlignment="Center" Foreground="{Binding ElementName=txt_SayMsg, Path=BorderBrush}"/>
+                        <TextBox x:Name ="txt_SayMsg" Margin="5 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Say Message" Width="350" HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Margin="20 0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <materialDesign:PackIcon Kind="Target" Foreground="{Binding ElementName=txt_SayMsg, Path=BorderBrush}" VerticalAlignment="Center" Height="20" Width="20" />
+                        <TextBlock Text="Goal Name" Margin="5 0"  FontSize="15" VerticalAlignment="Center" Foreground="{Binding ElementName=txt_Goal1st, Path=BorderBrush}"/>
+                        <TextBox x:Name ="txt_Goal1st" Margin="5 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="1st Goal Name" Width="150" HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black" />
+                        <TextBox x:Name ="txt_Goal2nd" Margin="5 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="2nd Goal Name" Width="150" HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Margin="20 0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <materialDesign:PackIcon Kind="TargetArrow" Foreground="{Binding ElementName=txt_TargetPosX, Path=BorderBrush}" VerticalAlignment="Center" Height="20" Width="20" />
+                        <TextBlock Text="Target Position" Margin="5 0"  FontSize="15" VerticalAlignment="Center" Foreground="{Binding ElementName=txt_TargetPosX, Path=BorderBrush}"/>
+                        <TextBox x:Name ="txt_TargetPosX" Margin="5 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Coordination X" Width="90" HorizontalAlignment="Center" TextAlignment="Center"  Foreground="Black"/>
+                        <TextBox x:Name ="txt_TargetPosY" Margin="5 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Coordination Y" Width="90" HorizontalAlignment="Center" TextAlignment="Center"  Foreground="Black"/>
+                        <TextBox x:Name ="txt_TargetPosAng" Margin="5 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Coord Angle" Width="90" HorizontalAlignment="Center" TextAlignment="Center"  Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Margin="20 0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <materialDesign:PackIcon Kind="PlaySpeed" Foreground="{Binding ElementName=txt_TargetPosX, Path=BorderBrush}" VerticalAlignment="Center" Height="20" Width="20" />
+                        <TextBlock Text="Moving Speed" Margin="5 0"  FontSize="15" VerticalAlignment="Center" Foreground="{Binding ElementName=txt_TargetPosX, Path=BorderBrush}"/>
+                        <TextBox x:Name ="txt_TargetSpd" Margin="5 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Speed" Width="90" HorizontalAlignment="Center" TextAlignment="Center"  Foreground="Black"/>
+                        <TextBox x:Name ="txt_TargetAcc" Margin="5 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Acceleration" Width="90" HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black" />
+                        <TextBox x:Name ="txt_TargetDcc" Margin="5 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Deceleration" Width="90" HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black" />
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <GroupBox Grid.Column="1" Grid.Row="0" Header="COMMANDS" Style="{DynamicResource MaterialDesignGroupBox}" Margin="5 10" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="SendSecure" Height="20" Width="20" VerticalAlignment="Center" />
+                            <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" Text="{Binding}" FontSize="15"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Row="0" Uid="0" Content="Stop" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="15" />
+
+                    <Button Grid.Row="1" Uid="1" Content="Say" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="15"/>
+
+                    <Button Grid.Row="2" Uid="2" Content="PauseCancel" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="15"/>
+
+                    <Button Grid.Row="3" Uid="3" Content="Go2Goal" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="15"/>
+
+                    <Button Grid.Row="4" Uid="4" Content="Go2Point" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="15"/>
+
+                    <Button Grid.Row="5" Uid="5" Content="Go2Straight" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="15"/>
+
+                    <Button Grid.Row="6" Uid="6" Content="Dock" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="15"/>
+
+                    <Button Grid.Row="7" Uid="7" Content="Undock" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="15"/>
+
+                    <Button Grid.Row="8" Uid="8" Content="MoveDeltaHeading" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="12"/>
+
+                    <Button Grid.Row="9" Uid="9" Content="MoveFront" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="15"/>
+
+                    <Button Grid.Row="10" Uid="10" Content="GetDistBetween" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="15"/>
+
+                    <Button Grid.Row="11" Uid="11" Content="GetDistFromHere" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="15"/>
+
+                    <Button Grid.Row="12" Uid="12" Content="LocalizeAtGoal" Margin="10 5" FontWeight="Bold" Style="{StaticResource BtnDefault}" Visibility="Visible"
+                        Background="#FF4B4747" Foreground="White" Click="Button_Click" Width="150" HorizontalAlignment="Left" FontSize="15"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</UserControl>
