@@ -132,7 +132,7 @@ namespace EzPower.Ctrl
                 case ePWRTYPE.ElgenCharger:
                     {
                         switch (key)
-                        {
+                        {  
                             case ePWRREAD_ITEMS.Temp_1st:
                             case ePWRREAD_ITEMS.Temp_2nd:
                             case ePWRREAD_ITEMS.Temp_3th:
